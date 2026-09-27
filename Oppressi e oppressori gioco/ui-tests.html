@@ -1,0 +1,22 @@
+<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Oppressi & Oppressori · Il nostro paese</title><link rel="stylesheet" href="style.css"></head><body><header><a class="brand" href="./index.html">O<span>&</span>O <small>OPPRESSI & OPPRESSORI</small></a><nav><button id="guide">Come si gioca</button><button id="save">Esporta partita</button><button id="restart">Nuova partita</button></nav></header><main id="app"></main><dialog id="modal"><button id="close" class="close" aria-label="Chiudi">×</button><div id="modal-body"></div></dialog><div id="toast" role="status"></div><footer>Adattamento digitale sperimentale · Gioco di Maria Guarneri e Oscar Biffi · NessunDove / Fondazione Gariwo, 2023<br>Carte narrative provvisorie originali. Non è un’edizione ufficiale.</footer><script src="engine.js"></script><script src="app.js"></script><script>
+let checks=0;function assertUI(v,m){checks++;if(!v)throw Error(m)}
+try{
+ for(const humans of [2,15,30]){
+  state=null;home();document.querySelector('#begin').click();
+  document.querySelector('#players').value='Solo';document.querySelector('#setup-form').dispatchEvent(new Event('submit',{cancelable:true}));assertUI(!state,'Rifiuta un solo partecipante');
+  document.querySelector('#players').value=Array.from({length:humans},(_,i)=>'Persona '+(i+1)).join('\n');document.querySelector('#count').value=Math.max(15,humans);
+  document.querySelector('#setup-form').dispatchEvent(new Event('submit',{cancelable:true}));
+  assertUI(state.mode==='group','Modalità gruppo');assertUI(new Set(state.people.map(p=>p.controller)).size===humans,'Tutti hanno un ruolo');
+  let clicks=0,handoffs=0;
+  while(state.act<7){
+   assertUI(valid(JSON.parse(JSON.stringify(state))),'Salvataggio valido');
+   if(document.querySelector('#ready')){assertUI(!document.querySelector('[data-action]'),'Scelte nascoste al passaggio');assertUI(document.querySelector('#ready').textContent.includes(controller(actor())),'Destinatario turno');document.querySelector('#ready').click();handoffs++}
+   assertUI(!document.querySelector('[data-action="bot"],[data-action="votes"]'),'Nessuna scelta automatica');
+   const before=JSON.stringify(state);const b=document.querySelector('[data-action="intervene"]')||document.querySelector('[data-action="redirect"]')||document.querySelector('#scene [data-action]');assertUI(!!b,'Azione disponibile');b.click();assertUI(JSON.stringify(state)!==before,'Azione applicata');assertUI(++clicks<400,'Partita termina');
+  }
+  assertUI(handoffs>=state.people.length*2,'Passaggi del computer');assertUI(document.querySelector('#reflection'),'Epilogo');
+  const saved=JSON.parse(JSON.stringify(state));assertUI(valid(saved),'Partita esportabile');saved.people[0].controller=100;assertUI(!valid(saved),'Assegnazione invalida respinta');
+ }
+ const out=document.createElement('pre');out.id='ui-result';out.textContent='PASS UI: 3 partite di gruppo complete (2, 15, 30 persone), '+checks+' verifiche';document.body.prepend(out);
+}catch(e){const out=document.createElement('pre');out.id='ui-result';out.textContent='FAIL UI: '+e.stack;document.body.prepend(out)}
+</script></body></html>

@@ -1,0 +1,40 @@
+﻿<!doctype html><meta charset="utf-8"><title>Test due dispositivi</title><pre id="result">Test in corso…</pre><iframe id="host" title="Facilitatore"></iframe><iframe id="guest" title="Ospite"></iframe><script src="engine.js"></script><script src="online-core.js"></script><script type="module">
+import {RoomClient} from './firebase-room.js';
+const records=new Map(),listeners=new Set(),clients={};let queue=Promise.resolve();const clone=x=>x===undefined?undefined:JSON.parse(JSON.stringify(x));
+function snapshot(ref){if(ref.query){const docs=[...records].filter(([key,val])=>key.startsWith(ref.path+'/')&&key.split('/').length===ref.path.split('/').length+1&&val[ref.field]===ref.value).map(([key])=>snapshot({path:key}));return {docs}}const value=records.get(ref.path);return {id:ref.path.split('/').at(-1),exists:()=>value!==undefined,data:()=>clone(value),metadata:{fromCache:false}}}
+function notify(){for(const l of listeners)queueMicrotask(()=>{if(listeners.has(l))l.fn(snapshot(l.ref))})}
+const f={doc:(db,...p)=>({path:p.join('/')}),collection:(db,...p)=>({path:p.join('/')}),where:(field,op,value)=>({field,value}),query:(ref,filter)=>({...ref,...filter,query:true}),serverTimestamp:()=>Date.now(),onSnapshot(ref,...args){const fn=typeof args[0]==='function'?args[0]:args[1],l={ref,fn};listeners.add(l);queueMicrotask(()=>{if(listeners.has(l))fn(snapshot(ref))});return()=>listeners.delete(l)},async setDoc(ref,value){records.set(ref.path,clone(value));notify()},async updateDoc(ref,value){if(!records.has(ref.path))throw Error('Missing doc');records.set(ref.path,{...records.get(ref.path),...clone(value)});notify()},runTransaction(db,callback){const task=queue.then(async()=>{const pending=[];await callback({get:async ref=>snapshot(ref),set:(ref,val)=>pending.push([ref,clone(val),false]),update:(ref,val)=>pending.push([ref,clone(val),true])});for(const[ref,val,merge]of pending)records.set(ref.path,merge?{...records.get(ref.path),...val}:val);if(pending.length)notify()});queue=task.catch(()=>{});return task}};
+window.makeTestClient=id=>clients[id]=new RoomClient(f,{},id);
+const pause=()=>new Promise(r=>setTimeout(r,5));async function until(fn,label){for(let i=0;i<700;i++){if(fn())return;await pause()}throw Error('Timeout: '+label)}
+let count=0;function ok(v,m){count++;if(!v)throw Error(m)}
+function doc(id){return document.getElementById(id).contentDocument}function click(id,sel){const button=doc(id).querySelector(sel);ok(button&&!button.disabled,'Pulsante disponibile '+id+' '+sel);button.click()}
+try{
+ document.getElementById('host').src='online-fixture.html?test=host';document.getElementById('guest').src='online-fixture.html?test=guest';
+ await until(()=>doc('host')?.querySelector('#create-room')&&doc('guest')?.querySelector('#create-room'),'Inizializzazione');
+ doc('host').querySelector('#online-name').value='Anna';click('host','#create-room');await until(()=>clients.host.code,'Stanza creata');const code=clients.host.code;
+ doc('guest').querySelector('#online-name').value='Luca';doc('guest').querySelector('#room-code').value=code;click('guest','#online-form button[type=submit]');
+ await until(()=>clients.host.room?.members.length===2&&clients.guest.room?.members.length===2,'Entrambi in lobby');click('host','#start-online');await until(()=>clients.host.room?.phase==='playing'&&clients.guest.room?.phase==='playing','Avvio sincronizzato');
+ const getRoom=()=>records.get('ooRooms/'+code),getState=()=>JSON.parse(records.get('ooRooms/'+code+'/private/state').state);
+ await clients.guest.send('place','Intrusione',getRoom().revision);await until(()=>records.get('ooRooms/'+code+'/commands/guest')?.status==='rejected','Comando fuori turno respinto');ok(getState().step===0,'Nessun avanzamento illegittimo');
+ let steps=0;
+ while(getState().act<7){const s=getState(),rev=getRoom().revision;let action,uid,value;
+  if(s.act===1){action='place';uid='host'}
+  if(s.act===2){action='daily';uid=s.people[s.step].ownerUid;value='help'}
+  if(s.act===3){action='accuse';uid=s.people[OnlineRules.active(s)].ownerUid;value=Engine.accusationTargets(s)[0]}
+  if([4,5].includes(s.act)){
+   const sc=s.scene;if(sc.stage==='target'){action='target';uid=s.people[sc.actor].ownerUid;value=Engine.targets(s)[0]}
+   if(sc.stage==='response'){action='obey';uid=s.people[sc.target].ownerUid}
+   if(sc.stage==='intervene'){if(s.giusti.length){action='intervene';value=Engine.witnesses(s)[0];uid=s.people[value].ownerUid}else{action='pass';uid='host'}}
+   if(sc.stage==='result'){action='next';uid='host'}
+  }
+  if(s.act===6){action='vote';uid=s.people[s.step].ownerUid;value='yes'}
+  let sel='[data-online-action="'+action+'"]';if(['daily','vote'].includes(action))sel+='[data-value="'+value+'"]';
+  await until(()=>{const b=doc(uid).querySelector(sel);return b&&!b.disabled&&clients[uid].room?.revision===rev},'Turno disponibile '+s.act+' '+action+' '+uid);
+  if(['accuse','target','intervene'].includes(action))doc(uid).querySelector('#target').value=value;
+  click(uid,sel);await until(()=>getRoom().revision===rev+1,'Avanzamento condiviso');await until(()=>clients.host.room.revision===rev+1&&clients.guest.room.revision===rev+1,'Entrambi aggiornati');
+  ok(++steps<300,'Partita termina');
+ }
+ ok(getRoom().phase==='finished','Epilogo condiviso');ok(JSON.parse(getRoom().game).votes.length===15,'Voti rivelati alla fine');
+ clients.host.stop();clients.guest.stop();document.querySelector('#result').textContent='PASS INTEGRATION · 2 interfacce · '+steps+' mosse sincronizzate · '+count+' verifiche (trasporto Firestore simulato)';
+}catch(e){Object.values(clients).forEach(c=>c.stop());document.querySelector('#result').textContent='FAIL '+e.stack}
+</script>

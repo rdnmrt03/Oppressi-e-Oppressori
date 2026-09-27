@@ -1,0 +1,26 @@
+﻿<!doctype html><meta charset="utf-8"><title>Test del simulatore</title><pre id="result">Test in corso…</pre><script src="engine.js"></script><script>
+const E=Engine;let assertions=0,games=0;function ok(v,m){assertions++;if(!v)throw Error(m)}function fails(fn,m){let threw=false;try{fn()}catch{threw=true}ok(threw,m)}
+try{
+ for(let n=15;n<=30;n++)for(let seed=1;seed<=12;seed++){
+  const s=E.create({n,seed,mode:'group'});ok(s.giusti.length===Math.ceil(n/5),'Numero Giusti');
+  for(let i=0;i<5;i++)E.apply(s,'place','Una storia');
+  while(s.act===2)E.apply(s,'daily','help');
+  while(s.act===3){let ids=E.accusationTargets(s);ok(ids.length>0,'Catena bloccata');ok(ids.every(id=>!E.bonds(s,s.chain.at(-1),id)),'Accusa un Legame');E.bot(s)}
+  ok(s.people.filter(p=>p.faction==='oppressore').length===Math.ceil(n/2),'Distribuzione fazioni');
+  ok(s.people[s.chain.at(-1)].faction==='oppressore','Fazione ultimo accusato');
+  let guard=0;
+  while(s.act===4||s.act===5){ok(++guard<300,'Avanzamento scene');const a=s.scene.actor;
+   if(s.scene.stage==='target'){const ts=E.targets(s);ok(ts.length>0,'Bersagli disponibili');ok(ts.every(id=>s.people[id].faction==='oppresso'),'Bersaglio Oppresso');if(s.act===4)ok(ts.every(id=>!E.bonds(s,a,id)),'Divieto bersaglio Legame IV');else{const b=s.people.filter(p=>p.faction==='oppresso'&&E.bonds(s,a,p.id));if(b.length)ok(ts.every(id=>E.bonds(s,a,id)),'Priorità Legami V')}fails(()=>E.apply(s,'target',a),'Rifiuta bersaglio invalido');E.bot(s)}
+   else if(s.scene.stage==='response'){const rs=E.redirects(s);ok(rs.every(id=>s.act===4?s.people[id].faction==='oppresso':E.bonds(s,s.scene.target,id)),'Vincoli sostituzione');if(rs.length)E.apply(s,'redirect',rs[0]);else E.apply(s,'obey')}
+   else if(s.scene.stage==='intervene'){if(s.giusti.length){fails(()=>E.apply(s,'intervene',s.scene.actor),'Attore non è spettatore');const before=s.giusti.length;E.apply(s,'intervene',E.witnesses(s)[0]);ok(s.giusti.length===before-1,'Carta consumata')}else E.apply(s,'pass')}
+   else E.apply(s,'next');
+  }
+  ok(s.usedGiusti.length===Math.ceil(n/5),'Esaurimento Giusti');
+  while(s.act===6)E.apply(s,'vote',seed%2===0);
+  ok(s.act===7&&s.ended,'Epilogo raggiunto');ok((E.result(s).remaining>0)===(seed%2===0),'Esito voto');games++;
+ }
+ const x=E.create({seed:9}),y=E.create({seed:9});ok(JSON.stringify(x)===JSON.stringify(y),'Casualità riproducibile');
+ const tie={votes:[{yes:true,weight:2},{yes:false,weight:2}]};ok(E.result(tie).remaining===0,'Pareggio conserva Linea');tie.votes.push({yes:true,weight:1});ok(E.result(tie).remaining===1,'Una mano rimuove Linea');
+ document.querySelector('#result').textContent='PASS · '+games+' partite complete · '+assertions+' verifiche';document.title='PASS';
+}catch(e){document.querySelector('#result').textContent='FAIL: '+e.stack;document.title='FAIL'}
+</script>

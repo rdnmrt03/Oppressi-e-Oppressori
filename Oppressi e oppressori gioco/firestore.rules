@@ -1,0 +1,59 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signed() { return request.auth != null; }
+    function room(code) { return get(/databases/$(database)/documents/ooRooms/$(code)).data; }
+    function host(code) { return signed() && room(code).hostId == request.auth.uid; }
+    function member(code) { return signed() && request.auth.uid in room(code).memberIds; }
+    match /ooRooms/{code} {
+      // Il codice casuale di 12 caratteri è l'invito. Nessun elenco pubblico delle stanze.
+      allow get: if signed();
+      allow list: if false;
+      allow create: if signed() && code.matches('^[A-HJ-NP-Z2-9]{12}$')
+        && request.resource.data.keys().hasOnly(['hostId','members','memberIds','n','town','phase','revision','game','hostSeen','createdAt'])
+        && request.resource.data.hostId == request.auth.uid
+        && request.resource.data.phase == 'lobby' && request.resource.data.revision == 0
+        && request.resource.data.game == null
+        && request.resource.data.n is int && request.resource.data.n >= 15 && request.resource.data.n <= 30
+        && request.resource.data.town is string && request.resource.data.town.size() <= 50
+        && request.resource.data.memberIds == [request.auth.uid]
+        && request.resource.data.members.size() == 1
+        && request.resource.data.members[0].keys().hasOnly(['uid','name'])
+        && request.resource.data.members[0].uid == request.auth.uid
+        && request.resource.data.members[0].name is string
+        && request.resource.data.members[0].name.size() > 0 && request.resource.data.members[0].name.size() <= 30
+        && request.resource.data.createdAt == request.time && request.resource.data.hostSeen == request.time;
+      allow update: if signed() && (
+        (resource.data.hostId == request.auth.uid && request.resource.data.hostId == resource.data.hostId)
+        || (resource.data.phase == 'lobby' && !(request.auth.uid in resource.data.memberIds)
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['members','memberIds','revision'])
+          && request.resource.data.revision == resource.data.revision + 1
+          && request.resource.data.members.size() == resource.data.members.size() + 1
+          && request.resource.data.members.size() <= resource.data.n
+          && request.resource.data.members[resource.data.members.size()].keys().hasOnly(['uid','name'])
+          && request.resource.data.members[resource.data.members.size()].uid == request.auth.uid
+          && request.resource.data.members[resource.data.members.size()].name is string
+          && request.resource.data.members[resource.data.members.size()].name.size() > 0
+          && request.resource.data.members[resource.data.members.size()].name.size() <= 30
+          && request.resource.data.members == resource.data.members.concat([request.resource.data.members[resource.data.members.size()]])
+          && request.resource.data.memberIds == resource.data.memberIds.concat([request.auth.uid])));
+      allow delete: if false;
+      match /private/{document} { allow read, write: if host(code); }
+      match /commands/{uid} {
+        allow read: if signed() && (request.auth.uid == uid || host(code));
+        allow create, update: if host(code) || (signed() && request.auth.uid == uid && member(code)
+          && room(code).phase == 'playing'
+          && request.resource.data.keys().hasOnly(['uid','action','value','revision','nonce','status','error','createdAt'])
+          && request.resource.data.uid == uid
+          && request.resource.data.action in ['place','daily','accuse','target','obey','redirect','intervene','pass','next','vote']
+          && (request.resource.data.value == null || request.resource.data.value is bool || request.resource.data.value is int || (request.resource.data.value is string && request.resource.data.value.size() <= 1500))
+          && request.resource.data.revision == room(code).revision
+          && request.resource.data.nonce is string && request.resource.data.nonce.size() <= 50
+          && request.resource.data.status == 'pending' && request.resource.data.error == ''
+          && request.resource.data.createdAt == request.time);
+        allow delete: if false;
+      }
+    }
+    match /{document=**} { allow read, write: if false; }
+  }
+}

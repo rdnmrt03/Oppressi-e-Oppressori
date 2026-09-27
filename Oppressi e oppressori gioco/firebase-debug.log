@@ -1,0 +1,313 @@
+[debug] [2026-09-27T10:09:05.676Z] ----------------------------------------------------------------------
+[debug] [2026-09-27T10:09:05.680Z] Command:       C:\Users\rdnmr\Desktop\Oppressi e oppressori gioco\.tools\node\node-v22.23.3-win-x64\node.exe C:\Users\rdnmr\Desktop\Oppressi e oppressori gioco\.tools\firebase-cli\node_modules\firebase-tools\lib\bin\firebase.js login --no-localhost
+[debug] [2026-09-27T10:09:05.681Z] CLI Version:   15.31.0
+[debug] [2026-09-27T10:09:05.681Z] Platform:      win32
+[debug] [2026-09-27T10:09:05.681Z] Node Version:  v22.23.3
+[debug] [2026-09-27T10:09:05.682Z] Detected Agent: codex_cli
+[debug] [2026-09-27T10:09:05.682Z] Time:          Sun Sep 27 2026 12:09:05 GMT+0200 (Ora legale dell’Europa centrale)
+[debug] [2026-09-27T10:09:05.682Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-09-27T10:09:05.697Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2026-09-27T10:09:05.925Z] >>> [apiv2][query] POST https://auth.firebase.tools/attest [none]
+[debug] [2026-09-27T10:09:05.925Z] >>> [apiv2][body] POST https://auth.firebase.tools/attest {"session_id":"c481cda4-1fd6-49b0-b4c0-5322f752eb2e"}
+[debug] [2026-09-27T10:09:06.277Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2026-09-27T10:09:06.277Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2026-09-27T10:09:06.456Z] <<< [apiv2][status] POST https://auth.firebase.tools/attest 200
+[debug] [2026-09-27T15:02:02.084Z] ----------------------------------------------------------------------
+[debug] [2026-09-27T15:02:02.088Z] Command:       C:\Users\rdnmr\Desktop\Oppressi e oppressori gioco\.tools\node\node-v22.23.3-win-x64\node.exe C:\Users\rdnmr\Desktop\Oppressi e oppressori gioco\.tools\firebase-cli\node_modules\firebase-tools\lib\bin\firebase.js login 4/0AXlqoi4Vo2MZ-r46pHsvfsS_alPWbpv2dY-Xav6aiXirtewjveag7P9J9lX76R8Nxp5S9A
+[debug] [2026-09-27T15:02:02.088Z] CLI Version:   15.31.0
+[debug] [2026-09-27T15:02:02.088Z] Platform:      win32
+[debug] [2026-09-27T15:02:02.089Z] Node Version:  v22.23.3
+[debug] [2026-09-27T15:02:02.089Z] Detected Agent: codex_cli
+[debug] [2026-09-27T15:02:02.089Z] Time:          Sun Sep 27 2026 17:02:02 GMT+0200 (Ora legale dell’Europa centrale)
+[debug] [2026-09-27T15:02:02.089Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-09-27T15:02:02.278Z] >>> [apiv2][query] POST https://accounts.google.com/o/oauth2/token [none]
+[debug] [2026-09-27T15:02:02.278Z] >>> [apiv2][body] POST https://accounts.google.com/o/oauth2/token [omitted]
+[debug] [2026-09-27T15:02:02.511Z] <<< [apiv2][status] POST https://accounts.google.com/o/oauth2/token 400
+[debug] [2026-09-27T15:02:02.512Z] <<< [apiv2][body] POST https://accounts.google.com/o/oauth2/token [omitted]
+[debug] [2026-09-27T15:02:02.513Z] Token Fetch Error: FirebaseError: Request to https://accounts.google.com/o/oauth2/token had HTTP Error: 400, invalid_grant
+    at responseToError (C:\Users\rdnmr\Desktop\Oppressi e oppressori gioco\.tools\firebase-cli\node_modules\firebase-tools\lib\responseToError.js:53:12)
+    at RetryOperation._fn (C:\Users\rdnmr\Desktop\Oppressi e oppressori gioco\.tools\firebase-cli\node_modules\firebase-tools\lib\apiv2.js:415:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+[error] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[error] 
+[error] Error: Login failed: Unable to authenticate using the provided code. Please try again.
+[debug] [2026-09-27T15:02:30.141Z] ----------------------------------------------------------------------
+[debug] [2026-09-27T15:02:30.146Z] Command:       C:\Users\rdnmr\Desktop\Oppressi e oppressori gioco\.tools\node\node-v22.23.3-win-x64\node.exe C:\Users\rdnmr\Desktop\Oppressi e oppressori gioco\.tools\firebase-cli\node_modules\firebase-tools\lib\bin\firebase.js login --no-localhost
+[debug] [2026-09-27T15:02:30.147Z] CLI Version:   15.31.0
+[debug] [2026-09-27T15:02:30.147Z] Platform:      win32
+[debug] [2026-09-27T15:02:30.147Z] Node Version:  v22.23.3
+[debug] [2026-09-27T15:02:30.148Z] Detected Agent: codex_cli
+[debug] [2026-09-27T15:02:30.148Z] Time:          Sun Sep 27 2026 17:02:30 GMT+0200 (Ora legale dell’Europa centrale)
+[debug] [2026-09-27T15:02:30.148Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-09-27T15:02:30.371Z] >>> [apiv2][query] POST https://auth.firebase.tools/attest [none]
+[debug] [2026-09-27T15:02:30.371Z] >>> [apiv2][body] POST https://auth.firebase.tools/attest {"session_id":"66103f40-4779-4db0-8175-7e56958f471e"}
+[debug] [2026-09-27T15:02:30.869Z] <<< [apiv2][status] POST https://auth.firebase.tools/attest 200
+[debug] [2026-09-27T15:03:22.126Z] ----------------------------------------------------------------------
+[debug] [2026-09-27T15:03:22.130Z] Command:       C:\Users\rdnmr\Desktop\Oppressi e oppressori gioco\.tools\node\node-v22.23.3-win-x64\node.exe C:\Users\rdnmr\Desktop\Oppressi e oppressori gioco\.tools\firebase-cli\node_modules\firebase-tools\lib\bin\firebase.js login 4/0AXlqoi5P8bFadwvJlKb0psqjbQzkfwXmhZ_OjcKxVoujLOPRwAzUNHWMBDJeML2SOaDvdw
+[debug] [2026-09-27T15:03:22.130Z] CLI Version:   15.31.0
+[debug] [2026-09-27T15:03:22.130Z] Platform:      win32
+[debug] [2026-09-27T15:03:22.130Z] Node Version:  v22.23.3
+[debug] [2026-09-27T15:03:22.131Z] Detected Agent: codex_cli
+[debug] [2026-09-27T15:03:22.131Z] Time:          Sun Sep 27 2026 17:03:22 GMT+0200 (Ora legale dell’Europa centrale)
+[debug] [2026-09-27T15:03:22.131Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-09-27T15:03:22.362Z] >>> [apiv2][query] POST https://accounts.google.com/o/oauth2/token [none]
+[debug] [2026-09-27T15:03:22.363Z] >>> [apiv2][body] POST https://accounts.google.com/o/oauth2/token [omitted]
+[debug] [2026-09-27T15:03:22.594Z] <<< [apiv2][status] POST https://accounts.google.com/o/oauth2/token 200
+[debug] [2026-09-27T15:03:36.145Z] ----------------------------------------------------------------------
+[debug] [2026-09-27T15:03:36.148Z] Command:       C:\Users\rdnmr\Desktop\Oppressi e oppressori gioco\.tools\node\node-v22.23.3-win-x64\node.exe C:\Users\rdnmr\Desktop\Oppressi e oppressori gioco\.tools\firebase-cli\node_modules\firebase-tools\lib\bin\firebase.js deploy --project oppressi-e-oppressori --only hosting,firestore:rules --non-interactive
+[debug] [2026-09-27T15:03:36.149Z] CLI Version:   15.31.0
+[debug] [2026-09-27T15:03:36.149Z] Platform:      win32
+[debug] [2026-09-27T15:03:36.149Z] Node Version:  v22.23.3
+[debug] [2026-09-27T15:03:36.150Z] Detected Agent: codex_cli
+[debug] [2026-09-27T15:03:36.150Z] Time:          Sun Sep 27 2026 17:03:36 GMT+0200 (Ora legale dell’Europa centrale)
+[debug] [2026-09-27T15:03:36.150Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-09-27T15:03:38.837Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-09-27T15:03:38.838Z] > authorizing via signed-in user (rdnmrt03@gmail.com)
+[debug] [2026-09-27T15:03:38.838Z] [iam] checking project oppressi-e-oppressori for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-09-27T15:03:38.850Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:03:38.850Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:03:38.851Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/oppressi-e-oppressori:testIamPermissions [none]
+[debug] [2026-09-27T15:03:38.851Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/oppressi-e-oppressori:testIamPermissions  x-goog-user-project=oppressi-e-oppressori
+[debug] [2026-09-27T15:03:38.851Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/oppressi-e-oppressori:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-09-27T15:03:39.229Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/oppressi-e-oppressori:testIamPermissions 200
+[debug] [2026-09-27T15:03:39.230Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/oppressi-e-oppressori:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-09-27T15:03:39.231Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:03:39.231Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:03:39.232Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/oppressi-e-oppressori [none]
+[debug] [2026-09-27T15:03:39.681Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/oppressi-e-oppressori 200
+[debug] [2026-09-27T15:03:39.681Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/oppressi-e-oppressori {"projectId":"oppressi-e-oppressori","projectNumber":"657516647843","displayName":"Oppressi e oppressori","name":"projects/oppressi-e-oppressori","resources":{"hostingSite":"oppressi-e-oppressori"},"state":"ACTIVE","labels":{"firebase":"enabled"},"etag":"1_d93904d6-d4bd-49b9-a4d0-e88d83842d62"}
+[info] 
+[info] === Deploying to 'oppressi-e-oppressori'...
+[info] 
+[info] i  deploying firestore, hosting 
+[info] i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[debug] [2026-09-27T15:03:39.688Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:03:39.688Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:03:39.688Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/oppressi-e-oppressori/services/firestore.googleapis.com [none]
+[debug] [2026-09-27T15:03:39.688Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/oppressi-e-oppressori/services/firestore.googleapis.com  x-goog-user-project=oppressi-e-oppressori
+[debug] [2026-09-27T15:03:40.749Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/oppressi-e-oppressori/services/firestore.googleapis.com 200
+[debug] [2026-09-27T15:03:40.749Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/oppressi-e-oppressori/services/firestore.googleapis.com [omitted]
+[info] +  firestore: required API firestore.googleapis.com is enabled 
+[info] i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[debug] [2026-09-27T15:03:40.795Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:03:40.796Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:03:40.796Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/oppressi-e-oppressori/databases/(default) [none]
+[debug] [2026-09-27T15:03:41.185Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/oppressi-e-oppressori/databases/(default) 200
+[debug] [2026-09-27T15:03:41.185Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/oppressi-e-oppressori/databases/(default) {"name":"projects/oppressi-e-oppressori/databases/(default)","uid":"63423266-58ce-496f-b7da-2d4cf9a297f9","createTime":"2026-09-27T09:54:35.259921Z","updateTime":"2026-09-27T09:54:35.259921Z","locationId":"eur3","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2026-09-27T14:03:42.821342Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"e","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","databaseEdition":"STANDARD","freeTier":true,"realtimeUpdatesMode":"REALTIME_UPDATES_MODE_ENABLED","etag":"IKHr+oqEj5cDMJTczYO/jpcD"}
+[info] i  cloud.firestore: checking firestore.rules for compilation errors... 
+[debug] [2026-09-27T15:03:41.213Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:03:41.213Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:03:41.214Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/oppressi-e-oppressori:test [none]
+[debug] [2026-09-27T15:03:41.215Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/oppressi-e-oppressori:test [omitted]
+[debug] [2026-09-27T15:03:42.143Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/oppressi-e-oppressori:test 200
+[debug] [2026-09-27T15:03:42.143Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/oppressi-e-oppressori:test {"issues":[{"sourcePosition":{"fileName":"firestore.rules","line":1,"column":1},"description":"token recognition error at: '﻿'","severity":"ERROR"}]}
+[error] 
+[error] Error: Compilation error in firestore.rules:
+[E] 1:1 - token recognition error at: '﻿'
+[debug] [2026-09-27T15:03:56.459Z] ----------------------------------------------------------------------
+[debug] [2026-09-27T15:03:56.462Z] Command:       C:\Users\rdnmr\Desktop\Oppressi e oppressori gioco\.tools\node\node-v22.23.3-win-x64\node.exe C:\Users\rdnmr\Desktop\Oppressi e oppressori gioco\.tools\firebase-cli\node_modules\firebase-tools\lib\bin\firebase.js deploy --project oppressi-e-oppressori --only hosting,firestore:rules --non-interactive
+[debug] [2026-09-27T15:03:56.463Z] CLI Version:   15.31.0
+[debug] [2026-09-27T15:03:56.463Z] Platform:      win32
+[debug] [2026-09-27T15:03:56.463Z] Node Version:  v22.23.3
+[debug] [2026-09-27T15:03:56.464Z] Detected Agent: codex_cli
+[debug] [2026-09-27T15:03:56.464Z] Time:          Sun Sep 27 2026 17:03:56 GMT+0200 (Ora legale dell’Europa centrale)
+[debug] [2026-09-27T15:03:56.464Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-09-27T15:03:57.919Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-09-27T15:03:57.919Z] > authorizing via signed-in user (rdnmrt03@gmail.com)
+[debug] [2026-09-27T15:03:57.920Z] [iam] checking project oppressi-e-oppressori for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-09-27T15:03:57.931Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:03:57.932Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:03:57.933Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/oppressi-e-oppressori:testIamPermissions [none]
+[debug] [2026-09-27T15:03:57.934Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/oppressi-e-oppressori:testIamPermissions  x-goog-user-project=oppressi-e-oppressori
+[debug] [2026-09-27T15:03:57.934Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/oppressi-e-oppressori:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-09-27T15:03:58.328Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/oppressi-e-oppressori:testIamPermissions 200
+[debug] [2026-09-27T15:03:58.328Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/oppressi-e-oppressori:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-09-27T15:03:58.329Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:03:58.329Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:03:58.329Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/oppressi-e-oppressori [none]
+[debug] [2026-09-27T15:03:58.850Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/oppressi-e-oppressori 200
+[debug] [2026-09-27T15:03:58.851Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/oppressi-e-oppressori {"projectId":"oppressi-e-oppressori","projectNumber":"657516647843","displayName":"Oppressi e oppressori","name":"projects/oppressi-e-oppressori","resources":{"hostingSite":"oppressi-e-oppressori"},"state":"ACTIVE","labels":{"firebase":"enabled"},"etag":"1_d93904d6-d4bd-49b9-a4d0-e88d83842d62"}
+[info] 
+[info] === Deploying to 'oppressi-e-oppressori'...
+[info] 
+[info] i  deploying firestore, hosting 
+[info] i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[info] i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[debug] [2026-09-27T15:03:58.859Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:03:58.859Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:03:58.860Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/oppressi-e-oppressori/databases/(default) [none]
+[debug] [2026-09-27T15:03:59.245Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/oppressi-e-oppressori/databases/(default) 200
+[debug] [2026-09-27T15:03:59.245Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/oppressi-e-oppressori/databases/(default) {"name":"projects/oppressi-e-oppressori/databases/(default)","uid":"63423266-58ce-496f-b7da-2d4cf9a297f9","createTime":"2026-09-27T09:54:35.259921Z","updateTime":"2026-09-27T09:54:35.259921Z","locationId":"eur3","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2026-09-27T14:04:00.879082Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"e","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","databaseEdition":"STANDARD","freeTier":true,"realtimeUpdatesMode":"REALTIME_UPDATES_MODE_ENABLED","etag":"INj+yJOEj5cDMJTczYO/jpcD"}
+[info] i  cloud.firestore: checking firestore.rules for compilation errors... 
+[debug] [2026-09-27T15:03:59.247Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:03:59.247Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:03:59.247Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/oppressi-e-oppressori:test [none]
+[debug] [2026-09-27T15:03:59.248Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/oppressi-e-oppressori:test [omitted]
+[debug] [2026-09-27T15:04:00.261Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/oppressi-e-oppressori:test 200
+[debug] [2026-09-27T15:04:00.261Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/oppressi-e-oppressori:test {}
+[info] +  cloud.firestore: rules file firestore.rules compiled successfully 
+[debug] [2026-09-27T15:04:00.263Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:04:00.263Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:04:00.264Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/oppressi-e-oppressori/sites/oppressi-e-oppressori [none]
+[debug] [2026-09-27T15:04:01.508Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/oppressi-e-oppressori/sites/oppressi-e-oppressori 200
+[debug] [2026-09-27T15:04:01.508Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/oppressi-e-oppressori/sites/oppressi-e-oppressori {"name":"projects/oppressi-e-oppressori/sites/oppressi-e-oppressori","defaultUrl":"https://oppressi-e-oppressori.web.app","type":"DEFAULT_SITE"}
+[debug] [2026-09-27T15:04:01.510Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:04:01.510Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:04:01.510Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/oppressi-e-oppressori/versions [none]
+[debug] [2026-09-27T15:04:01.511Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/oppressi-e-oppressori/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2026-09-27T15:04:04.522Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/oppressi-e-oppressori/versions 200
+[debug] [2026-09-27T15:04:04.523Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/oppressi-e-oppressori/versions {"name":"projects/657516647843/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2026-09-27T15:04:04.524Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:04:04.525Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:04:04.525Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/oppressi-e-oppressori/releases pageSize=10&pageToken=
+[debug] [2026-09-27T15:04:05.380Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/oppressi-e-oppressori/releases 200
+[debug] [2026-09-27T15:04:05.380Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/oppressi-e-oppressori/releases {"releases":[{"name":"projects/oppressi-e-oppressori/releases/cloud.firestore","rulesetName":"projects/oppressi-e-oppressori/rulesets/37a5968f-8994-4082-9cdd-aeb83c86a8c2","createTime":"2026-09-27T09:54:38.797854Z","updateTime":"2026-09-27T09:54:38.797854Z"}]}
+[debug] [2026-09-27T15:04:05.381Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:04:05.381Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:04:05.381Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/oppressi-e-oppressori/rulesets/37a5968f-8994-4082-9cdd-aeb83c86a8c2 [none]
+[debug] [2026-09-27T15:04:05.801Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/oppressi-e-oppressori/rulesets/37a5968f-8994-4082-9cdd-aeb83c86a8c2 200
+[debug] [2026-09-27T15:04:05.801Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/oppressi-e-oppressori/rulesets/37a5968f-8994-4082-9cdd-aeb83c86a8c2 [omitted]
+[info] i  firestore: uploading rules firestore.rules... 
+[debug] [2026-09-27T15:04:05.803Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:04:05.803Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:04:05.803Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/oppressi-e-oppressori/rulesets [none]
+[debug] [2026-09-27T15:04:05.804Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/oppressi-e-oppressori/rulesets [omitted]
+[debug] [2026-09-27T15:04:06.719Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/oppressi-e-oppressori/rulesets 200
+[debug] [2026-09-27T15:04:06.719Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/oppressi-e-oppressori/rulesets {"name":"projects/oppressi-e-oppressori/rulesets/528a3367-d191-4464-9810-637baa4cff4e","source":{"files":[{"content":"rules_version = '2';\r\nservice cloud.firestore {\r\n  match /databases/{database}/documents {\r\n    function signed() { return request.auth != null; }\r\n    function room(code) { return get(/databases/$(database)/documents/ooRooms/$(code)).data; }\r\n    function host(code) { return signed() && room(code).hostId == request.auth.uid; }\r\n    function member(code) { return signed() && request.auth.uid in room(code).memberIds; }\r\n    match /ooRooms/{code} {\r\n      // Il codice casuale di 12 caratteri è l'invito. Nessun elenco pubblico delle stanze.\r\n      allow get: if signed();\r\n      allow list: if false;\r\n      allow create: if signed() && code.matches('^[A-HJ-NP-Z2-9]{12}$')\r\n        && request.resource.data.keys().hasOnly(['hostId','members','memberIds','n','town','phase','revision','game','hostSeen','createdAt'])\r\n        && request.resource.data.hostId == request.auth.uid\r\n        && request.resource.data.phase == 'lobby' && request.resource.data.revision == 0\r\n        && request.resource.data.game == null\r\n        && request.resource.data.n is int && request.resource.data.n >= 15 && request.resource.data.n <= 30\r\n        && request.resource.data.town is string && request.resource.data.town.size() <= 50\r\n        && request.resource.data.memberIds == [request.auth.uid]\r\n        && request.resource.data.members.size() == 1\r\n        && request.resource.data.members[0].keys().hasOnly(['uid','name'])\r\n        && request.resource.data.members[0].uid == request.auth.uid\r\n        && request.resource.data.members[0].name is string\r\n        && request.resource.data.members[0].name.size() > 0 && request.resource.data.members[0].name.size() <= 30\r\n        && request.resource.data.createdAt == request.time && request.resource.data.hostSeen == request.time;\r\n      allow update: if signed() && (\r\n        (resource.data.hostId == request.auth.uid && request.resource.data.hostId == resource.data.hostId)\r\n        || (resource.data.phase == 'lobby' && !(request.auth.uid in resource.data.memberIds)\r\n          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['members','memberIds','revision'])\r\n          && request.resource.data.revision == resource.data.revision + 1\r\n          && request.resource.data.members.size() == resource.data.members.size() + 1\r\n          && request.resource.data.members.size() <= resource.data.n\r\n          && request.resource.data.members[resource.data.members.size()].keys().hasOnly(['uid','name'])\r\n          && request.resource.data.members[resource.data.members.size()].uid == request.auth.uid\r\n          && request.resource.data.members[resource.data.members.size()].name is string\r\n          && request.resource.data.members[resource.data.members.size()].name.size() > 0\r\n          && request.resource.data.members[resource.data.members.size()].name.size() <= 30\r\n          && request.resource.data.members == resource.data.members.concat([request.resource.data.members[resource.data.members.size()]])\r\n          && request.resource.data.memberIds == resource.data.memberIds.concat([request.auth.uid])));\r\n      allow delete: if false;\r\n      match /private/{document} { allow read, write: if host(code); }\r\n      match /commands/{uid} {\r\n        allow read: if signed() && (request.auth.uid == uid || host(code));\r\n        allow create, update: if host(code) || (signed() && request.auth.uid == uid && member(code)\r\n          && room(code).phase == 'playing'\r\n          && request.resource.data.keys().hasOnly(['uid','action','value','revision','nonce','status','error','createdAt'])\r\n          && request.resource.data.uid == uid\r\n          && request.resource.data.action in ['place','daily','accuse','target','obey','redirect','intervene','pass','next','vote']\r\n          && (request.resource.data.value == null || request.resource.data.value is bool || request.resource.data.value is int || (request.resource.data.value is string && request.resource.data.value.size() <= 1500))\r\n          && request.resource.data.revision == room(code).revision\r\n          && request.resource.data.nonce is string && request.resource.data.nonce.size() <= 50\r\n          && request.resource.data.status == 'pending' && request.resource.data.error == ''\r\n          && request.resource.data.createdAt == request.time);\r\n        allow delete: if false;\r\n      }\r\n    }\r\n    match /{document=**} { allow read, write: if false; }\r\n  }\r\n}\r\n","name":"firestore.rules"}]},"createTime":"2026-09-27T15:04:08.228239Z","metadata":{"services":["cloud.firestore"]}}
+[debug] [2026-09-27T15:04:06.720Z] [rules] created ruleset projects/oppressi-e-oppressori/rulesets/528a3367-d191-4464-9810-637baa4cff4e
+[info] i  hosting[oppressi-e-oppressori]: beginning deploy... 
+[info] i  hosting[oppressi-e-oppressori]: found 10 files in web 
+[debug] [2026-09-27T15:04:06.740Z] [hosting] uploading with 200 concurrency
+[debug] [2026-09-27T15:04:06.741Z] [hosting] hash cache [d2Vi] not populated
+[debug] [2026-09-27T15:04:06.761Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:04:06.761Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:04:06.763Z] [hosting] hash cache [d2Vi] stored for 10 files
+[debug] [2026-09-27T15:04:06.763Z] [hosting][hash queue][FINAL] {"max":18,"min":15,"avg":15.8,"active":0,"complete":10,"success":10,"errored":0,"retried":0,"total":10,"elapsed":22}
+[debug] [2026-09-27T15:04:06.763Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/657516647843/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb:populateFiles [none]
+[debug] [2026-09-27T15:04:06.763Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/657516647843/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb:populateFiles {"files":{"/online.html":"ed70b8fa7492c2a0456f364d00f86404e2f8c481baf0ca6f1c5d116c4dd12b41","/online-core.js":"8d34321f1e48ac5b362dd13e3c7f472824d1d709d65c59f594fca34244a9d729","/style.css":"a95318b2aef346d1e4d9fb1da8469bd75bf1e0abc8e1d466bb9a073014fa2276","/online.css":"7a60c52702bb4afdfaf51709fbdca7f981c63ff3a3e1da1660074ecc17ef33a0","/index.html":"7659b61e74dcd69055cb4e76e494f97eb8cd09c2973401262a3d4bd66d82a6f1","/firebase-config.js":"01c3a568186a9132bc1bb1ab6be8b7f134c99839762bb49566f40206f5e8d6ef","/online.js":"82f7c64c4000ff43906b9d1d010be31d72fac0fca2dfb43ecc520f97612734ec","/firebase-room.js":"901431d9bbb7d9ba386f9dc703c82077bdc744c819964abea302472a79ca63c7","/engine.js":"c92660d6b3e51062df6db30d2db232b4cfb4ea8ddb31179b41c587020acb0b3a","/app.js":"2fb5413f63d772fc551fd7455ec5a6aeb5a4c9658e44d297050fef808b5a0e1f"}}
+[debug] [2026-09-27T15:04:07.530Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/657516647843/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb:populateFiles 200
+[debug] [2026-09-27T15:04:07.530Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/657516647843/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb:populateFiles {"uploadRequiredHashes":["2fb5413f63d772fc551fd7455ec5a6aeb5a4c9658e44d297050fef808b5a0e1f","7a60c52702bb4afdfaf51709fbdca7f981c63ff3a3e1da1660074ecc17ef33a0","82f7c64c4000ff43906b9d1d010be31d72fac0fca2dfb43ecc520f97612734ec","c92660d6b3e51062df6db30d2db232b4cfb4ea8ddb31179b41c587020acb0b3a","01c3a568186a9132bc1bb1ab6be8b7f134c99839762bb49566f40206f5e8d6ef","901431d9bbb7d9ba386f9dc703c82077bdc744c819964abea302472a79ca63c7","8d34321f1e48ac5b362dd13e3c7f472824d1d709d65c59f594fca34244a9d729","a95318b2aef346d1e4d9fb1da8469bd75bf1e0abc8e1d466bb9a073014fa2276","ed70b8fa7492c2a0456f364d00f86404e2f8c481baf0ca6f1c5d116c4dd12b41","7659b61e74dcd69055cb4e76e494f97eb8cd09c2973401262a3d4bd66d82a6f1"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files"}
+[debug] [2026-09-27T15:04:07.532Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:04:07.532Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:04:07.532Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:04:07.533Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:04:07.533Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:04:07.533Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:04:07.534Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:04:07.534Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:04:07.534Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:04:07.534Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:04:07.535Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:04:07.535Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:04:07.535Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:04:07.535Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:04:07.536Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:04:07.536Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:04:07.536Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:04:07.536Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:04:07.537Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:04:07.537Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:04:07.538Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files/2fb5413f63d772fc551fd7455ec5a6aeb5a4c9658e44d297050fef808b5a0e1f [none]
+[debug] [2026-09-27T15:04:07.538Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files/2fb5413f63d772fc551fd7455ec5a6aeb5a4c9658e44d297050fef808b5a0e1f [stream]
+[debug] [2026-09-27T15:04:07.540Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files/7a60c52702bb4afdfaf51709fbdca7f981c63ff3a3e1da1660074ecc17ef33a0 [none]
+[debug] [2026-09-27T15:04:07.540Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files/7a60c52702bb4afdfaf51709fbdca7f981c63ff3a3e1da1660074ecc17ef33a0 [stream]
+[debug] [2026-09-27T15:04:07.541Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files/82f7c64c4000ff43906b9d1d010be31d72fac0fca2dfb43ecc520f97612734ec [none]
+[debug] [2026-09-27T15:04:07.542Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files/82f7c64c4000ff43906b9d1d010be31d72fac0fca2dfb43ecc520f97612734ec [stream]
+[debug] [2026-09-27T15:04:07.542Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files/c92660d6b3e51062df6db30d2db232b4cfb4ea8ddb31179b41c587020acb0b3a [none]
+[debug] [2026-09-27T15:04:07.543Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files/c92660d6b3e51062df6db30d2db232b4cfb4ea8ddb31179b41c587020acb0b3a [stream]
+[debug] [2026-09-27T15:04:07.544Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files/01c3a568186a9132bc1bb1ab6be8b7f134c99839762bb49566f40206f5e8d6ef [none]
+[debug] [2026-09-27T15:04:07.544Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files/01c3a568186a9132bc1bb1ab6be8b7f134c99839762bb49566f40206f5e8d6ef [stream]
+[debug] [2026-09-27T15:04:07.545Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files/901431d9bbb7d9ba386f9dc703c82077bdc744c819964abea302472a79ca63c7 [none]
+[debug] [2026-09-27T15:04:07.545Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files/901431d9bbb7d9ba386f9dc703c82077bdc744c819964abea302472a79ca63c7 [stream]
+[debug] [2026-09-27T15:04:07.547Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files/8d34321f1e48ac5b362dd13e3c7f472824d1d709d65c59f594fca34244a9d729 [none]
+[debug] [2026-09-27T15:04:07.547Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files/8d34321f1e48ac5b362dd13e3c7f472824d1d709d65c59f594fca34244a9d729 [stream]
+[debug] [2026-09-27T15:04:07.548Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files/a95318b2aef346d1e4d9fb1da8469bd75bf1e0abc8e1d466bb9a073014fa2276 [none]
+[debug] [2026-09-27T15:04:07.548Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files/a95318b2aef346d1e4d9fb1da8469bd75bf1e0abc8e1d466bb9a073014fa2276 [stream]
+[debug] [2026-09-27T15:04:07.548Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files/ed70b8fa7492c2a0456f364d00f86404e2f8c481baf0ca6f1c5d116c4dd12b41 [none]
+[debug] [2026-09-27T15:04:07.548Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files/ed70b8fa7492c2a0456f364d00f86404e2f8c481baf0ca6f1c5d116c4dd12b41 [stream]
+[debug] [2026-09-27T15:04:07.549Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files/7659b61e74dcd69055cb4e76e494f97eb8cd09c2973401262a3d4bd66d82a6f1 [none]
+[debug] [2026-09-27T15:04:07.549Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files/7659b61e74dcd69055cb4e76e494f97eb8cd09c2973401262a3d4bd66d82a6f1 [stream]
+[debug] [2026-09-27T15:04:07.555Z] [hosting][populate queue][FINAL] {"max":776,"min":776,"avg":776,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":794}
+[debug] [2026-09-27T15:04:07.555Z] [hosting] uploads queued: 10
+[debug] [2026-09-27T15:04:08.526Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files/2fb5413f63d772fc551fd7455ec5a6aeb5a4c9658e44d297050fef808b5a0e1f 200
+[debug] [2026-09-27T15:04:08.527Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files/2fb5413f63d772fc551fd7455ec5a6aeb5a4c9658e44d297050fef808b5a0e1f [stream]
+[debug] [2026-09-27T15:04:08.531Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files/a95318b2aef346d1e4d9fb1da8469bd75bf1e0abc8e1d466bb9a073014fa2276 200
+[debug] [2026-09-27T15:04:08.532Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files/a95318b2aef346d1e4d9fb1da8469bd75bf1e0abc8e1d466bb9a073014fa2276 [stream]
+[debug] [2026-09-27T15:04:08.574Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files/82f7c64c4000ff43906b9d1d010be31d72fac0fca2dfb43ecc520f97612734ec 200
+[debug] [2026-09-27T15:04:08.574Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files/82f7c64c4000ff43906b9d1d010be31d72fac0fca2dfb43ecc520f97612734ec [stream]
+[debug] [2026-09-27T15:04:08.596Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files/ed70b8fa7492c2a0456f364d00f86404e2f8c481baf0ca6f1c5d116c4dd12b41 200
+[debug] [2026-09-27T15:04:08.596Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files/ed70b8fa7492c2a0456f364d00f86404e2f8c481baf0ca6f1c5d116c4dd12b41 [stream]
+[debug] [2026-09-27T15:04:08.620Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files/c92660d6b3e51062df6db30d2db232b4cfb4ea8ddb31179b41c587020acb0b3a 200
+[debug] [2026-09-27T15:04:08.621Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files/c92660d6b3e51062df6db30d2db232b4cfb4ea8ddb31179b41c587020acb0b3a [stream]
+[debug] [2026-09-27T15:04:08.645Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files/8d34321f1e48ac5b362dd13e3c7f472824d1d709d65c59f594fca34244a9d729 200
+[debug] [2026-09-27T15:04:08.645Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files/8d34321f1e48ac5b362dd13e3c7f472824d1d709d65c59f594fca34244a9d729 [stream]
+[debug] [2026-09-27T15:04:08.744Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files/7a60c52702bb4afdfaf51709fbdca7f981c63ff3a3e1da1660074ecc17ef33a0 200
+[debug] [2026-09-27T15:04:08.744Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files/7a60c52702bb4afdfaf51709fbdca7f981c63ff3a3e1da1660074ecc17ef33a0 [stream]
+[info] i  hosting: uploading new files [7/10] (70%) 
+[debug] [2026-09-27T15:04:08.757Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files/01c3a568186a9132bc1bb1ab6be8b7f134c99839762bb49566f40206f5e8d6ef 200
+[debug] [2026-09-27T15:04:08.757Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files/01c3a568186a9132bc1bb1ab6be8b7f134c99839762bb49566f40206f5e8d6ef [stream]
+[debug] [2026-09-27T15:04:08.769Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files/7659b61e74dcd69055cb4e76e494f97eb8cd09c2973401262a3d4bd66d82a6f1 200
+[debug] [2026-09-27T15:04:08.769Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files/7659b61e74dcd69055cb4e76e494f97eb8cd09c2973401262a3d4bd66d82a6f1 [stream]
+[debug] [2026-09-27T15:04:08.974Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files/901431d9bbb7d9ba386f9dc703c82077bdc744c819964abea302472a79ca63c7 200
+[debug] [2026-09-27T15:04:08.975Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb/files/901431d9bbb7d9ba386f9dc703c82077bdc744c819964abea302472a79ca63c7 [stream]
+[debug] [2026-09-27T15:04:08.975Z] [hosting][upload queue][FINAL] {"max":1441,"min":996,"avg":1140.3,"active":0,"complete":10,"success":10,"errored":0,"retried":0,"total":10,"elapsed":1444}
+[info] i  hosting: upload complete 
+[info] +  hosting[oppressi-e-oppressori]: file upload complete 
+[debug] [2026-09-27T15:04:08.975Z] [hosting] deploy completed after 2248ms
+[debug] [2026-09-27T15:04:08.976Z] [rules] releasing cloud.firestore with ruleset projects/oppressi-e-oppressori/rulesets/528a3367-d191-4464-9810-637baa4cff4e
+[debug] [2026-09-27T15:04:08.976Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:04:08.977Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:04:08.977Z] >>> [apiv2][query] PATCH https://firebaserules.googleapis.com/v1/projects/oppressi-e-oppressori/releases/cloud.firestore [none]
+[debug] [2026-09-27T15:04:08.977Z] >>> [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/oppressi-e-oppressori/releases/cloud.firestore {"release":{"name":"projects/oppressi-e-oppressori/releases/cloud.firestore","rulesetName":"projects/oppressi-e-oppressori/rulesets/528a3367-d191-4464-9810-637baa4cff4e"}}
+[debug] [2026-09-27T15:04:09.893Z] <<< [apiv2][status] PATCH https://firebaserules.googleapis.com/v1/projects/oppressi-e-oppressori/releases/cloud.firestore 200
+[debug] [2026-09-27T15:04:09.894Z] <<< [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/oppressi-e-oppressori/releases/cloud.firestore {"name":"projects/oppressi-e-oppressori/releases/cloud.firestore","rulesetName":"projects/oppressi-e-oppressori/rulesets/528a3367-d191-4464-9810-637baa4cff4e","createTime":"2026-09-27T09:54:38.797854Z","updateTime":"2026-09-27T15:04:11.465941Z"}
+[debug] [2026-09-27T15:04:09.894Z] [rules] updated release projects/oppressi-e-oppressori/releases/cloud.firestore
+[info] +  firestore: released rules firestore.rules to cloud.firestore 
+[debug] [2026-09-27T15:04:09.894Z] [
+  {
+    "config": {
+      "public": "web",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "headers": [
+        {
+          "source": "**",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "no-cache"
+            }
+          ]
+        }
+      ],
+      "site": "oppressi-e-oppressori"
+    },
+    "version": "projects/657516647843/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb"
+  }
+]
+[info] i  hosting[oppressi-e-oppressori]: finalizing version... 
+[debug] [2026-09-27T15:04:09.896Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:04:09.896Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:04:09.897Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb updateMask=status%2Cconfig
+[debug] [2026-09-27T15:04:09.897Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb {"status":"FINALIZED","config":{"headers":[{"glob":"**","headers":{"Cache-Control":"no-cache"}}]}}
+[debug] [2026-09-27T15:04:11.243Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb 200
+[debug] [2026-09-27T15:04:11.243Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb {"name":"projects/657516647843/sites/oppressi-e-oppressori/versions/9f9ec3ecb01338fb","status":"FINALIZED","config":{"headers":[{"headers":{"Cache-Control":"no-cache"},"glob":"**"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-09-27T15:04:03.880378Z","createUser":{"email":"rdnmrt03@gmail.com"},"finalizeTime":"2026-09-27T15:04:12.711307Z","finalizeUser":{"email":"rdnmrt03@gmail.com"}}
+[debug] [2026-09-27T15:04:11.244Z] [hosting] finalized version for oppressi-e-oppressori:[object Object]
+[info] +  hosting[oppressi-e-oppressori]: version finalized 
+[info] i  hosting[oppressi-e-oppressori]: releasing new version... 
+[debug] [2026-09-27T15:04:11.244Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:04:11.245Z] Checked if tokens are valid: true, expires at: 1790525001594
+[debug] [2026-09-27T15:04:11.245Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/oppressi-e-oppressori/channels/live/releases versionName=projects%2F657516647843%2Fsites%2Foppressi-e-oppressori%2Fversions%2F9f9ec3ecb01338fb
+[debug] [2026-09-27T15:04:11.245Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/oppressi-e-oppressori/channels/live/releases {}
+[debug] [2026-09-27T15:04:12.545Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/oppressi-e-oppressori/channels/live/releases 200
